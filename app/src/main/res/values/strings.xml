@@ -7,4 +7,6 @@
     <string name="type">Type:</string>
     <string name="gender">Gender:</string>
     <string name="close">CLOSE</string>
+    <string name="loading">Loading card details…</string>
+    <string name="character_img">Character image</string>
 </resources>
