@@ -23,4 +23,8 @@ public class RetrofitClient {
         return mInstance;
     }
 
+    public JSONPlaceHolderAPI getApi(){
+        return retrofit.create(JSONPlaceHolderAPI.class);
+    }
+
 }
