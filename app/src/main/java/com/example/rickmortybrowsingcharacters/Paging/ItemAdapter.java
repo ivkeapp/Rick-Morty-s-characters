@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.rickmortybrowsingcharacters.Models.Result;
+import com.example.rickmortybrowsingcharacters.Paging.AlertDialog.ShowAlertDialog;
 import com.example.rickmortybrowsingcharacters.R;
 
 public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHolder> {
@@ -54,13 +55,14 @@ public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHo
         itemViewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getInfoDialog(result);
+                ShowAlertDialog dialog = new ShowAlertDialog();
+                dialog.showInfoDialog(mContext, result);
             }
         });
 
     }
 
-    //determing wheter two objects or two list objects are same or not
+    //Determine whether two objects or two list objects are the same or not
     private static DiffUtil.ItemCallback<Result> DIFF_CALLBACK = new DiffUtil.ItemCallback<Result>() {
 
         @Override
@@ -80,44 +82,12 @@ public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHo
         TextView headline;
         RelativeLayout parent_layout;
 
-        public ItemViewHolder(@NonNull View itemView) {
+        private ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             characterImage = itemView.findViewById(R.id.character_image);
             headline = itemView.findViewById(R.id.headline);
             parent_layout = itemView.findViewById(R.id.list_item_parent_layout);
         }
-    }
-
-    private void getInfoDialog(Result result){
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
-        View mView = inflater.inflate(R.layout.alert_dialog_character_details,null);
-        mBuilder.setView(mView);
-        setInfoText(result, mView);
-        final AlertDialog dialog = mBuilder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        dialog.show();
-        Button closeDialogBtn = mView.findViewById(R.id.close_btn);
-        closeDialogBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.hide();
-            }
-        });
-    }
-
-    private void setInfoText(Result result, View view){
-        TextView status, specie, type, gender, headl;
-        status = view.findViewById(R.id.character_status);
-        specie = view.findViewById(R.id.specie_response);
-        type = view.findViewById(R.id.type_response);
-        gender = view.findViewById(R.id.gender_response);
-        headl = view.findViewById(R.id.character_name);
-        status.setText(result.getStatus());
-        specie.setText(result.getSpecies());
-        type.setText(result.getType());
-        gender.setText(result.getGender());
-        headl.setText(result.getName());
     }
 
 }
