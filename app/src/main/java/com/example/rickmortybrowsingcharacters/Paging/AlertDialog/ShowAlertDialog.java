@@ -1,6 +1,7 @@
 package com.example.rickmortybrowsingcharacters.Paging.AlertDialog;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,7 @@ public class ShowAlertDialog {
         mBuilder.setView(mView);
         setInfoText(result, mView);
         final android.app.AlertDialog dialog = mBuilder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
         Button closeDialogBtn = mView.findViewById(R.id.close_btn);
         closeDialogBtn.setOnClickListener(new View.OnClickListener() {
@@ -34,17 +35,27 @@ public class ShowAlertDialog {
     }
 
     private void setInfoText(Result result, View view){
-        TextView status, specie, type, gender, headl;
+        TextView status, specie, gender, headl;
         status = view.findViewById(R.id.character_status);
         specie = view.findViewById(R.id.specie_response);
-        type = view.findViewById(R.id.type_response);
         gender = view.findViewById(R.id.gender_response);
         headl = view.findViewById(R.id.character_name);
         status.setText(result.getStatus());
         specie.setText(result.getSpecies());
-        type.setText(result.getType());
         gender.setText(result.getGender());
         headl.setText(result.getName());
+        checkType(result, view);
+    }
+
+    private void checkType(Result result, View view){
+        String sType = result.getType();
+        TextView type;
+        type = view.findViewById(R.id.type_response);
+        if(sType.equals("")){
+            type.setText("unknown");
+        }else{
+            type.setText(sType);
+        }
     }
 
 }
