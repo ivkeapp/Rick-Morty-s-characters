@@ -6,7 +6,7 @@ import android.arch.paging.LivePagedListBuilder;
 import android.arch.paging.PageKeyedDataSource;
 import android.arch.paging.PagedList;
 
-import com.example.rickmortybrowsingcharacters.ApiService.Result;
+import com.example.rickmortybrowsingcharacters.Models.Result;
 
 public class CharacterViewModel extends ViewModel {
 

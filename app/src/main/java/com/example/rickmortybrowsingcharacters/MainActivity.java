@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.rickmortybrowsingcharacters.ApiService.Result;
+import com.example.rickmortybrowsingcharacters.Models.Result;
 import com.example.rickmortybrowsingcharacters.Paging.CharacterViewModel;
 import com.example.rickmortybrowsingcharacters.Paging.ItemAdapter;
 

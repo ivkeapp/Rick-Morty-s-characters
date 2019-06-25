@@ -3,8 +3,8 @@ package com.example.rickmortybrowsingcharacters.Paging;
 import android.arch.paging.PageKeyedDataSource;
 import android.support.annotation.NonNull;
 
-import com.example.rickmortybrowsingcharacters.ApiService.Character;
-import com.example.rickmortybrowsingcharacters.ApiService.Result;
+import com.example.rickmortybrowsingcharacters.Models.Character;
+import com.example.rickmortybrowsingcharacters.Models.Result;
 import com.example.rickmortybrowsingcharacters.ApiService.RetrofitClient;
 
 import retrofit2.Call;

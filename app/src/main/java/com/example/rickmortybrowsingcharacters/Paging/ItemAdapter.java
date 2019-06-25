@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.rickmortybrowsingcharacters.ApiService.Result;
+import com.example.rickmortybrowsingcharacters.Models.Result;
 import com.example.rickmortybrowsingcharacters.R;
 
 public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHolder> {

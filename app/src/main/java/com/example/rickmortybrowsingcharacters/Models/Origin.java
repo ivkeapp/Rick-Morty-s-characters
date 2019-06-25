@@ -1,9 +1,9 @@
-package com.example.rickmortybrowsingcharacters.ApiService;
+package com.example.rickmortybrowsingcharacters.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Location {
+public class Origin {
 
     @SerializedName("name")
     @Expose

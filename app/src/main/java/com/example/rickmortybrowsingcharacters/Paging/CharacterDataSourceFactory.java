@@ -4,7 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.paging.DataSource;
 import android.arch.paging.PageKeyedDataSource;
 
-import com.example.rickmortybrowsingcharacters.ApiService.Result;
+import com.example.rickmortybrowsingcharacters.Models.Result;
 
 public class CharacterDataSourceFactory extends DataSource.Factory {
 
