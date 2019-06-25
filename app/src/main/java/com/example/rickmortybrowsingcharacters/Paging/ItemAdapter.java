@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.rickmortybrowsingcharacters.Models.Origin;
 import com.example.rickmortybrowsingcharacters.Models.Result;
 import com.example.rickmortybrowsingcharacters.Paging.AlertDialog.ShowAlertDialog;
 import com.example.rickmortybrowsingcharacters.R;

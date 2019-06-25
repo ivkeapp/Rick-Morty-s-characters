@@ -35,24 +35,28 @@ public class ShowAlertDialog {
     }
 
     private void setInfoText(Result result, View view){
-        TextView status, specie, gender, headl;
+        TextView status, specie, gender, headl, location;
         status = view.findViewById(R.id.character_status);
         specie = view.findViewById(R.id.specie_response);
         gender = view.findViewById(R.id.gender_response);
         headl = view.findViewById(R.id.character_name);
+        location = view.findViewById(R.id.location_response);
         status.setText(result.getStatus());
         specie.setText(result.getSpecies());
         gender.setText(result.getGender());
         headl.setText(result.getName());
+        location.setText((result.getOrigin().getName()));
         checkType(result, view);
     }
 
     private void checkType(Result result, View view){
-        String sType = result.getType();
+        String unknown, sType;
+        unknown = "unknown";
+        sType = result.getType();
         TextView type;
         type = view.findViewById(R.id.type_response);
         if(sType.equals("")){
-            type.setText("unknown");
+            type.setText(unknown);
         }else{
             type.setText(sType);
         }

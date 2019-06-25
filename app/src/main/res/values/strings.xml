@@ -9,4 +9,5 @@
     <string name="close">CLOSE</string>
     <string name="loading">Loading card details…</string>
     <string name="character_img">Character image</string>
+    <string name="location">Location</string>
 </resources>
