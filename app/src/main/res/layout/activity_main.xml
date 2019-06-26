@@ -7,7 +7,7 @@
     android:background="@color/backgoundGray">
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:src="@drawable/rm_logo"/>
     <android.support.v7.widget.RecyclerView
@@ -19,8 +19,8 @@
         android:id="@+id/bt_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="80dp"
         android:text="RETRY"
         android:textColor="@color/white"
         android:background="@color/colorPrimary"/>

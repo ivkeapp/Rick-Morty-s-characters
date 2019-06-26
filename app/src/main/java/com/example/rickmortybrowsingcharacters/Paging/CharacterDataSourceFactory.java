@@ -10,7 +10,6 @@ public class CharacterDataSourceFactory extends DataSource.Factory {
 
     private MutableLiveData<PageKeyedDataSource<Integer, Result>> characterLiveDataSource = new MutableLiveData<>();
 
-
     @Override
     public DataSource create() {
         CharacterDataSource characterDataSource = new CharacterDataSource();

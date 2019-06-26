@@ -1,23 +1,19 @@
 package com.example.rickmortybrowsingcharacters.Paging;
 
-import android.app.AlertDialog;
 import android.arch.paging.PagedListAdapter;
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.rickmortybrowsingcharacters.Models.Origin;
 import com.example.rickmortybrowsingcharacters.Models.Result;
 import com.example.rickmortybrowsingcharacters.Paging.AlertDialog.ShowAlertDialog;
 import com.example.rickmortybrowsingcharacters.R;
@@ -68,7 +64,7 @@ public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHo
 
         @Override
         public boolean areItemsTheSame(@NonNull Result result, @NonNull Result t1) {
-            return result.getId()==t1.getId();
+            return result.getId().equals(t1.getId());
         }
 
         @Override

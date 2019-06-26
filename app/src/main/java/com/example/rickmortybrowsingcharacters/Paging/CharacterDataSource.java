@@ -52,9 +52,7 @@ public class CharacterDataSource extends PageKeyedDataSource<Integer, Result> {
                         Integer key = (params.key > 1) ? params.key - 1 : null;
 
                         if(response.body() != null){
-
                             callback.onResult(response.body().getResults(), key);
-
                         }
 
                     }
@@ -77,15 +75,11 @@ public class CharacterDataSource extends PageKeyedDataSource<Integer, Result> {
                     @Override
                     public void onResponse(Call<Character> call, Response<Character> response) {
 
-
                         if(response.body() != null) {
-
                             String hasNext = response.body().getInfo().getNext();
                             Integer key = !hasNext.equals("") ? params.key + 1 : null;
                             callback.onResult(response.body().getResults(), key);
-
                         }
-
 
                     }
 

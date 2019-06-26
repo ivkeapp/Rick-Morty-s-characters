@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.QuickContactBadge;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private Button btRetry;
+    private ProgressBar pb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 if(internet){
                     initList();
                     btRetry.setVisibility(View.GONE);
-                }
-                else{
+                } else{
                     Toast.makeText(MainActivity.this, "Connection issue, please try again", Toast.LENGTH_SHORT).show();
-                }}
+                }
+            }
         });
 
         btRetry = findViewById(R.id.bt_retry);
@@ -51,20 +53,20 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void accept(Boolean internet) {
                         if(internet){
-                        btRetry.setVisibility(View.GONE);
-                        initList();
-                        Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
+                            btRetry.setVisibility(View.GONE);
+                            initList();
+                            Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
+                        } else{
+                            Toast.makeText(MainActivity.this, "Connection issue, please try again", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    else{
-                        Toast.makeText(MainActivity.this, "Connection issue, please try again", Toast.LENGTH_SHORT).show();
-                    }}
                 });
             }
         });
 
     }
 
-    private void initList(){
+    public void initList(){
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
