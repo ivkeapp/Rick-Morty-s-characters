@@ -12,7 +12,7 @@ Android application for browsing Rick &amp; Morty's TV show characters
 
 ## About app
 
-This app is developed as part of job interview assigment. It uses Rick & Morty's API: https://rickandmortyapi.com/api/ for fetching all characters informations and displaying it as scrollable card list
+This app is developed as part of job interview assigment. It uses Rick & Morty's API: https://rickandmortyapi.com/api/ for fetching all characters informations and displaying it as scrollable card list. Application is compiled with latest Android version and supported from KitKat (API 19).
 
 ## Methods
 
