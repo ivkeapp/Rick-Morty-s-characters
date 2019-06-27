@@ -23,8 +23,10 @@ public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHo
     private Context mContext;
 
     public ItemAdapter(Context mContext) {
+
         super(DIFF_CALLBACK);
         this.mContext = mContext;
+
     }
 
     @NonNull
@@ -80,10 +82,13 @@ public class ItemAdapter extends PagedListAdapter<Result, ItemAdapter.ItemViewHo
         RelativeLayout parent_layout;
 
         private ItemViewHolder(@NonNull View itemView) {
+
             super(itemView);
+
             characterImage = itemView.findViewById(R.id.character_image);
             headline = itemView.findViewById(R.id.headline);
             parent_layout = itemView.findViewById(R.id.list_item_parent_layout);
+
         }
     }
 

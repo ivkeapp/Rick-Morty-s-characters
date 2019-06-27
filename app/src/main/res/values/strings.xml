@@ -10,4 +10,6 @@
     <string name="loading">Loading card details…</string>
     <string name="character_img">Character image</string>
     <string name="location">Location</string>
+    <string name="retry">RETRY</string>
+    <string name="logo_image">Logo image</string>
 </resources>

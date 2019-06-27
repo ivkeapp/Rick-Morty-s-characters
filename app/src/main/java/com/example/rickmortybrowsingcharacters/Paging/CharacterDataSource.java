@@ -16,7 +16,9 @@ public class CharacterDataSource extends PageKeyedDataSource<Integer, Result> {
     private static final int FIRST_PAGE = 1;
 
     @Override
-    public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull final LoadInitialCallback<Integer, Result> callback) {
+    public void loadInitial(@NonNull LoadInitialParams<Integer> params,
+                            @NonNull final LoadInitialCallback<Integer,
+                                     Result> callback) {
 
         RetrofitClient.getInstance()
                 .getApi()
@@ -33,14 +35,16 @@ public class CharacterDataSource extends PageKeyedDataSource<Integer, Result> {
 
                     @Override
                     public void onFailure(Call<Character> call, Throwable t) {
-
+                        //handling failure
                     }
                 });
 
     }
 
     @Override
-    public void loadBefore(@NonNull final LoadParams<Integer> params, @NonNull final LoadCallback<Integer, Result> callback) {
+    public void loadBefore(@NonNull final LoadParams<Integer> params,
+                           @NonNull final LoadCallback<Integer,
+                                    Result> callback) {
 
         RetrofitClient.getInstance()
                 .getApi()
@@ -59,14 +63,16 @@ public class CharacterDataSource extends PageKeyedDataSource<Integer, Result> {
 
                     @Override
                     public void onFailure(Call<Character> call, Throwable t) {
-
+                        //handling failure
                     }
                 });
 
     }
 
     @Override
-    public void loadAfter(@NonNull final LoadParams<Integer> params, @NonNull final LoadCallback<Integer, Result> callback) {
+    public void loadAfter(@NonNull final LoadParams<Integer> params,
+                          @NonNull final LoadCallback<Integer,
+                                   Result> callback) {
 
         RetrofitClient.getInstance()
                 .getApi()
@@ -85,7 +91,7 @@ public class CharacterDataSource extends PageKeyedDataSource<Integer, Result> {
 
                     @Override
                     public void onFailure(Call<Character> call, Throwable t) {
-
+                        //handling failure
                     }
                 });
 
