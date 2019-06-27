@@ -14,7 +14,7 @@ class InternetCheck extends AsyncTask<Void,Void,Boolean> {
         void accept(Boolean internet);
     }
 
-    private InternetCheck(Consumer consumer) {
+    public InternetCheck(Consumer consumer) {
         mConsumer = consumer; execute();
     }
 
