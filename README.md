@@ -23,6 +23,7 @@ This app is developed as part of the job interview assignment. It uses Rick & Mo
 #### AlertDialog
 - showInfoDialog() - method for showing an alert dialog with character details.
 - setInfoText() - method for setting TextView texts from API call results.
+- checkType() - method which check if type of character exist.
 
 #### DataSource
 - getCharacterLiveDataSource() - method for retrieving live data source.
