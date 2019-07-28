@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private Button btRetry;
-    private ProgressBar pb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
