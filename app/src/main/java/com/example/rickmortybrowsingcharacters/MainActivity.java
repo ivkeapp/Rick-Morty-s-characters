@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.rickmortybrowsingcharacters.Models.Result;
@@ -28,34 +27,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new InternetCheck(new InternetCheck.Consumer() {
-            @Override
-            public void accept(Boolean internet) {
-                if(internet){
-                    initList();
-                    btRetry.setVisibility(View.GONE);
-                } else{
-                    Toast.makeText(MainActivity.this, "Connection issue, please try again", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        checkInternet();
 
         btRetry = findViewById(R.id.bt_retry);
         btRetry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new InternetCheck(new InternetCheck.Consumer() {
-                    @Override
-                    public void accept(Boolean internet) {
-                        if(internet){
-                            btRetry.setVisibility(View.GONE);
-                            initList();
-                            Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
-                        } else{
-                            Toast.makeText(MainActivity.this, "Connection issue, please try again", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                checkInternet();
             }
         });
 
@@ -67,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //For grid view (need to adjust xml styles for grid view)
-        //recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        //recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         CharacterViewModel characterViewModel = ViewModelProviders.of(MainActivity.this).get(CharacterViewModel.class);
         final ItemAdapter adapter = new ItemAdapter(MainActivity.this);
@@ -81,6 +59,20 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
+    }
+
+    private void checkInternet(){
+        new InternetCheck(new InternetCheck.Consumer() {
+            @Override
+            public void accept(Boolean internet) {
+                if(internet){
+                    initList();
+                    btRetry.setVisibility(View.GONE);
+                } else{
+                    Toast.makeText(MainActivity.this, "Connection issue, please try again", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 }
