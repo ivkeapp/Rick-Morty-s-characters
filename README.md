@@ -35,4 +35,4 @@ This app is developed as part of the job interview assignment. It uses Rick & Mo
 - initList() - method that initialize RecyclerView and fill it with data from the API.
 
 ## Other tools
-http://www.jsonschema2pojo.org/ for creating Java classes based on JSON schema
+http://www.jsonschema2pojo.org/ for creating Java model classes based on JSON schema
