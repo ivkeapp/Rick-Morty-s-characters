@@ -47,7 +47,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/round_relative_layout"
                 android:layout_margin="3dp"
                 android:orientation="vertical">
                 <TextView
