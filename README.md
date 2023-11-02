@@ -16,7 +16,7 @@ This app is developed as part of the job interview assignment. It uses Rick & Mo
 
 ## Methods
 
-#### Rertrofit
+#### Retrofit
 - getApi() - method for invoking GET API call with the endpoint.
 - getInstance() - method for creating single RetrofitClient object.
 
